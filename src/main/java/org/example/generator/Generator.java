@@ -12,22 +12,22 @@ public class Generator {
 
     public Generator(){
 
-        primitiveGenerators.put(int.class, () -> random.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE));
-        primitiveGenerators.put(Integer.class, () -> random.nextInt(Integer.MIN_VALUE, Integer.MAX_VALUE));
-        primitiveGenerators.put(double.class, () -> random.nextDouble(Double.MIN_VALUE, Double.MAX_VALUE));
-        primitiveGenerators.put(Double.class, () -> random.nextDouble(Double.MIN_VALUE, Double.MAX_VALUE));
-        primitiveGenerators.put(short.class, () -> (short) random.nextInt(Short.MIN_VALUE, Short.MAX_VALUE + 1));
-        primitiveGenerators.put(Short.class, () -> (short) random.nextInt(Short.MIN_VALUE, Short.MAX_VALUE + 1));
-        primitiveGenerators.put(long.class, () -> random.nextLong(Long.MIN_VALUE, Long.MAX_VALUE));
-        primitiveGenerators.put(Long.class, () -> random.nextLong(Long.MIN_VALUE, Long.MAX_VALUE));
-        primitiveGenerators.put(float.class, () -> random.nextFloat(Float.MIN_VALUE, Float.MAX_VALUE));
-        primitiveGenerators.put(Float.class, () -> random.nextFloat(Float.MIN_VALUE, Float.MAX_VALUE));
+        primitiveGenerators.put(int.class, () -> random.nextInt(-100, 101));
+        primitiveGenerators.put(Integer.class, () -> random.nextInt(-100, 101));
+        primitiveGenerators.put(double.class, () -> random.nextDouble(-100.0, 100.0));
+        primitiveGenerators.put(Double.class, () -> random.nextDouble(-100.0, 100.0));
+        primitiveGenerators.put(short.class, () -> (short) random.nextInt(-100, 101));
+        primitiveGenerators.put(Short.class, () -> (short) random.nextInt(-100, 101));
+        primitiveGenerators.put(long.class, () -> random.nextLong(-100L, 101L));
+        primitiveGenerators.put(Long.class, () -> random.nextLong(-100L, 101L));
+        primitiveGenerators.put(float.class, () -> random.nextFloat(-100.0f, 100.0f));
+        primitiveGenerators.put(Float.class, () -> random.nextFloat(-100.0f, 100.0f));
         primitiveGenerators.put(boolean.class, random::nextBoolean);
         primitiveGenerators.put(Boolean.class, random::nextBoolean);
         primitiveGenerators.put(char.class, () -> (char) ('a' + random.nextInt(26)));
         primitiveGenerators.put(Character.class, () -> (char) ('a' + random.nextInt(26)));
-        primitiveGenerators.put(byte.class, () -> (byte) random.nextInt(Byte.MIN_VALUE, Byte.MAX_VALUE + 1));
-        primitiveGenerators.put(Byte.class, () -> (byte) random.nextInt(Byte.MIN_VALUE, Byte.MAX_VALUE + 1));
+        primitiveGenerators.put(byte.class, () -> (byte) random.nextInt(-100, 101));
+        primitiveGenerators.put(Byte.class, () -> (byte) random.nextInt(-100, 101));
         primitiveGenerators.put(String.class, this::generateRandomString);
     }
 
