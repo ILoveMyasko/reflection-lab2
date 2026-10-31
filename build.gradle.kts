@@ -5,6 +5,12 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
 repositories {
     mavenCentral()
 }
@@ -17,4 +23,9 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.register<JavaExec>("runExample") {
+    mainClass.set("org.example.GenerateExample")
+    classpath = sourceSets["main"].runtimeClasspath
 }
